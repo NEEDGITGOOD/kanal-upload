@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connecting… · Kanal Upload</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Connecting to Kanal Upload…</h1>
+  <p class="lead">You are being sent back to the Kanal Upload app on your computer.</p>
+  <p class="muted">If nothing happens, make sure the app is running and <a id="go" href="http://127.0.0.1:4321/tiktok/callback">click here</a>.</p>
+</main>
+<script>
+  // TikTok sends the login result here; pass it on unchanged to the local app.
+  var target = "http://127.0.0.1:4321/tiktok/callback" + location.search;
+  document.getElementById("go").href = target;
+  location.replace(target);
+</script>
+</body>
+</html>
